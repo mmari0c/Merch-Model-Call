@@ -6,7 +6,7 @@ This project replaces the current messy, manual process (shared laptops, forgott
 
 ## Overview
 Every semester, Merch Inc. hosts a fashion show where designers select models.  
-Currently, the process is slowed down by:
+for their collection. Currently, the process is slowed down by:
 
 - Manual sign-ups on a limited number of laptops
 - Models forgetting their assigned numbers
