@@ -1,9 +1,24 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icons } from '../icons.js'
 
-function ModelCard({ name, modelNumber, isFavorite, available }) {
+function ModelCard({ name, modelNumber, isFavorite, available, onSelect }) {
+  const handleActivate = () => {
+    if (onSelect) onSelect()
+  }
+
   return (
-    <div className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow flex flex-col gap-3">
+    <div
+      className={`${available ? 'bg-white' : 'bg-gray-50'} p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow flex flex-col gap-3 cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-400`}
+      role="button"
+      tabIndex={0}
+      onClick={handleActivate}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          handleActivate()
+        }
+      }}
+    >
       <div className="w-full h-100 bg-gray-100 rounded-lg lg:h-50" aria-hidden="true" />
       <div>
         <h3 className="font-medium">{name}</h3>
@@ -11,12 +26,24 @@ function ModelCard({ name, modelNumber, isFavorite, available }) {
       </div>
 
       <p className={`w-full text-center py-2 rounded-lg font-medium ${available ? 'text-green-700 bg-green-100' : 'text-red-700 bg-red-100'}`}>
-        {available ? 'Available' : 'Not Available'}
+        {available ? 'Available' : 'Unavailable'}
       </p>
 
-      <button className="mt-auto w-full bg-white border border-gray-200 py-2 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-        <FontAwesomeIcon icon={isFavorite ? icons.favoriteSolid : icons.favorite} />
-        {isFavorite ? 'Starred' : 'Add to Starlist'}
+      <button
+        className="mt-auto w-full bg-white border border-gray-200 py-2 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+        onClick={(event) => event.stopPropagation()}
+      >
+        {available ? (
+          <>
+            <FontAwesomeIcon icon={isFavorite ? icons.favoriteSolid : icons.favorite} />
+            {isFavorite ? 'Starred' : 'Add to Starlist'}
+          </>
+        ) : (
+          <>
+            <FontAwesomeIcon icon={icons.favorite} />
+            Unavailable
+          </>
+        )}
       </button>
     </div>
   )

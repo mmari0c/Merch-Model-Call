@@ -19,7 +19,7 @@ function ModelPortal() {
   }
 
   return (
-    <section className="portal model-portal flex items-center justify-center min-h-screen text-xs">
+    <section className="portal model-portal flex items-center justify-center min-h-screen text-xs sm:text-sm">
       <div className="max-w-lg w-full p-6">
         <StageStatus
           label="Current Stage"
@@ -28,7 +28,7 @@ function ModelPortal() {
           role="model"
         />
 
-        <div className="model-info mt-6 bg-white p-6 rounded-xl border-2 border-gray-200 flex flex-col gap-4 items-center text-xs">
+        <div className="model-info mt-6 bg-white p-6 rounded-xl border-2 border-gray-200 flex flex-col gap-4 items-center">
           {/* PLACEHOLDER INFORMATION */}
           <h1 className="text-xl font-light">{model.name}</h1>
           <p>Model Number: </p>

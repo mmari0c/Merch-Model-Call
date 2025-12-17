@@ -3,7 +3,7 @@ import { icons } from '../icons.js'
 
 function StageStatus({ label, status, description, role }) {
   return (
-    <div className="bg-white p-6 rounded-xl border-2 border-gray-200 flex flex-col gap-4 text-xs">
+    <div className="bg-white p-6 rounded-xl border-2 border-gray-200 flex flex-col gap-4 text-xs sm:text-sm">
       <div className='flex items-center gap-4'>
         <FontAwesomeIcon className="text-xl text-gray-500" icon={icons.stageStatus} />
         <div>
