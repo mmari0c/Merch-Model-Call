@@ -32,11 +32,11 @@ This project addresses these challenges by providing:
 - **Frontend:** React + Next.js  
 - **Styling:** Tailwind CSS  
 - **Backend:** Supabase (Auth, Database, Storage, Realtime)  
-- **Deployment:** TBD  
+- **Deployment:** TBD   
 
 
 ## Roadmap
-1. Build frontend mock with **Next.js + Tailwind** using fake data  
+1. Build frontend mock with Next.js + Tailwind using fake data  
 2. Integrate Supabase for auth and database storage  
 3. Add real-time updates and selection logic  
 4. Deploy demo on Vercel  
