@@ -15,7 +15,7 @@ for their collection. Currently, the process is slowed down by:
 - Models are unsure whether they’ve been selected
 - Models have limited ways to showcase themselves beyond a runway walk
 
-**This project addresses these challenges by providing:**
+This project addresses these challenges by providing:
 
 - A centralized sign-up portal for both models and designers
 - Model profiles with photos, key details, and assigned model numbers
